@@ -38,7 +38,7 @@ public class Student {
 		if (grade > 0 && grade < 5) {
 			this.grade = grade;
 		} else {
-			System.out.println("ÇĞ³âÀº 1~4 »çÀÌ¿©¾ß ÇÕ´Ï´Ù.");
+			System.out.println("í•™ë…„ì€ 1~4 ì‚¬ì´ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 		}
 	}
 
