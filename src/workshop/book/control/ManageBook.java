@@ -29,7 +29,7 @@ public class ManageBook {
 		System.out.println(pub2.getTitle() + " = " + pub2.getPrice());
 		
 		for (Publication publication : pubs) {
-			printSubInfo(publication)
+			printSubInfo(publication);
 		}
 		
 //		//Magazine 객체생성
@@ -45,7 +45,16 @@ public class ManageBook {
 	
 	// 하위(Sub) 클래스들이 단독으로 가지고 있는 정보를 출력하는 메서드
 	public static void printSubInfo(Publication pub) {
-		Magazine m = (Magazine)pub; // 하위타입으로 캐스팅
+		if ( pub instanceof Magazine) {
+			Magazine m = (Magazine)pub; // 하위타입으로 캐스팅
+			System.out.println(m.getPublishingPeriod());
+		} else if(pub instanceof Novel) {
+			Novel n = (Novel)pub;
+			System.out.println(n.getAuthor() + " " + n.getGenre());
+		} else if(pub instanceof ReferenceBook) {
+			ReferenceBook r = (ReferenceBook)pub;
+			System.out.println(r.getField());
+		}
 	}
 	
 	// 다형적 Argument(Polymorphic Argument)
