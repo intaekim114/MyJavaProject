@@ -19,19 +19,37 @@ public class ManageBook {
 		for (Publication publication : pubs) {
 			System.out.println(publication);
 		}
-		//Magazine 객체생성
-		Magazine mz = new Magazine();
-		//mz 변수로 호출 가능한 메서드는 5개
-		Publication pub = new Magazine();
-		//pub 변수로 호출 가능한 메서드 4개
 		
-		//Novel 객체생성
-		Novel novel = new Novel();
-		Publication pub2 = new Novel();
+		System.out.println("=== 가격 변경 전 ===");
+		Publication pub2 = pubs[2];
+		System.out.println(pub2.getTitle() + " = " + pub2.getPrice());
+		modifyPrice(pub2);
+		
+		System.out.println("=== 가격 변경 후 ===");
+		System.out.println(pub2.getTitle() + " = " + pub2.getPrice());
+		
+		for (Publication publication : pubs) {
+			printSubInfo(publication)
+		}
+		
+//		//Magazine 객체생성
+//		Magazine mz = new Magazine();
+//		//mz 변수로 호출 가능한 메서드는 5개
+//		Publication pub = new Magazine();
+//		//pub 변수로 호출 가능한 메서드 4개
+//		
+//		//Novel 객체생성
+//		Novel novel = new Novel();
+//		Publication pub2 = new Novel();
+	}
+	
+	// 하위(Sub) 클래스들이 단독으로 가지고 있는 정보를 출력하는 메서드
+	public static void printSubInfo(Publication pub) {
+		Magazine m = (Magazine)pub; // 하위타입으로 캐스팅
 	}
 	
 	// 다형적 Argument(Polymorphic Argument)
-	public void modifyPrice(Publication pub) {
+	public static void modifyPrice(Publication pub) {
 		double rate = 0.0;
 		if (pub instanceof Magazine) {
 			rate = 0.6; // 40%
