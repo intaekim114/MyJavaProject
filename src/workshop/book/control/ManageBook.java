@@ -29,5 +29,21 @@ public class ManageBook {
 		Novel novel = new Novel();
 		Publication pub2 = new Novel();
 	}
+	
+	// ´ÙÇüÀû Argument(Polymorphic Argument)
+	public void modifyPrice(Publication pub) {
+		double rate = 0.0;
+		if (pub instanceof Magazine) {
+			rate = 0.6; // 40%
+		} 
+		if (pub instanceof Novel) {
+			rate = 0.8; // 20%
+		}
+		if (pub instanceof ReferenceBook) {
+			rate = 0.9; // 10%
+		}
+		
+		pub.setPrice((int)(pub.getPrice()  * rate));
+	}
 
 }
